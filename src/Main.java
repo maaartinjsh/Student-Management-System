@@ -29,7 +29,7 @@ class Student {
 
 // class which stores all the functions
 public class Main {
-   
+
     public static void main(String[] args) {
 
         System.out.print("Student Management System\n 1.Add a new student \n 2.View all students \n 3.Delete student \n 4.Exit\n");
@@ -37,7 +37,7 @@ public class Main {
         Scanner obj = new Scanner(System.in); // for user inputs
         List<Student> studentList = new ArrayList<>(); // array list to save student records
         while (true) { // while loop so the system doesn't stop when user picks 1 option
-            System.out.print("\nChoose an option: ");
+            System.out.print("Choose an option: ");
             String option = obj.nextLine();
 
             // Option 1 for adding students
@@ -105,6 +105,7 @@ public class Main {
                     for (Student student : studentList) {
                         if (student.year == studentsFromYear) { // checks if year from studentList matches the entered number in studentsFromYear
                             System.out.println(student); // if the variable studentsFromYear matches with studentList year it prints out the students
+                            break;
                         }
                     }
                 }
@@ -119,7 +120,7 @@ public class Main {
                     if (studentToDelete == student.studentID) { // checks if number in studentToDelete matches studentID from studentList
                         iterator.remove();// removes student if numbers from studentToDelete and studentID matches
                         System.out.print("Student deleted successfully\n"); // prints out that student has been deleted
-
+                        break;
                     }
                 }
                 // Option 4, exit the program
