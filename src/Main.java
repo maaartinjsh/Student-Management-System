@@ -42,6 +42,7 @@ public class Main {
                 System.out.print("Enter student ID: ");
                 int studentID = obj.nextInt();
                 obj.nextLine();
+
                 for (Student student : studentList) {
                     if (student.studentID == studentID) {
                         System.out.println("Student ID not available");
@@ -49,6 +50,7 @@ public class Main {
                 }
 
                 int age = 0;
+
                 while (age < 18 ) {
                     System.out.print("Enter student's age: ");
                     age = obj.nextInt();
@@ -56,8 +58,10 @@ public class Main {
                         System.out.println("Students need to be at least 18 years old ");
                     }
                 }
+
                 obj.nextLine();
                 int year = 0;
+
                 while (year < 1 || year > 4) {
                     System.out.print("Which year student is this: ");
                     year = obj.nextInt();
@@ -65,6 +69,7 @@ public class Main {
                         System.out.println("There are only options from year 1 to year 4");
                     }
                 }
+
                 obj.nextLine();
                 Student newStudent = new Student(name, lastName, studentID, age, year);
                 studentList.add(newStudent);
@@ -75,9 +80,11 @@ public class Main {
                 for (Student student : studentList) {
                     System.out.println(student);
                 }
+
                 System.out.print("Search students from specific year:");
                 int studentsFromYear = obj.nextInt();
                 obj.nextLine();
+
                 if (studentsFromYear < 1 || studentsFromYear > 4) {
                     System.out.println("There are only options from year 1 to 4");
                 } else {
@@ -92,6 +99,7 @@ public class Main {
                 System.out.print("Enter student's ID to delete that student:");
                 int studentToDelete = obj.nextInt();
                 Iterator<Student> iterator = studentList.iterator();
+                
                 while (iterator.hasNext()) {
                     Student student = iterator.next();
                     if (studentToDelete == student.studentID) {
