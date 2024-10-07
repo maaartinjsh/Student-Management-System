@@ -51,36 +51,31 @@ public class Main {
                 System.out.print("Enter student ID: ");
                 int studentID = obj.nextInt(); //input student's ID
                 obj.nextLine();
-
                 // Check if ID is already used in system
                 for (Student student : studentList) { // finds all student's
-                    if (student.studentID == studentID) { // check's if user inputted student ID is already in system
+                    if (student.studentID == studentID) { // check's if user entered student ID is already in system
                         System.out.println("Student ID not available"); // prints out message that ID is not available
                     }
                 }
 
-
                 int age = 0; // Sets the student age as 0
-
-                while (age < 18 ) { // checks if entered age is allowed
+                while (age < 18) { // checks for entered ages below 18 until correct age is entered
                     System.out.print("Enter student's age(at least 18): ");
-                    age = obj.nextInt(); // enters age if it is allowed
-                    if (age < 18 || age >100) { //checks if entered age is not allowed
+                    age = obj.nextInt(); // enters age
+                    if (age < 18) { //checks if entered age is not allowed
                         System.out.println("Students need to be at least 18 years old "); // prints message that age is not valid
                     }
                 }
 
                 obj.nextLine();
                 int year = 0; // sets the year to 0
-
                 while (year < 1 || year > 4) { // allows to input year
                     System.out.print("Which year student is this(choose from year 1 to year 4): ");
                     year = obj.nextInt(); // if year is 1-4 system saves it to array list
                     if (year < 1 || year > 4) {
-                        System.out.println("There are only options from year 1 to year 4");// doesn't allow to input year
+                            System.out.println("There are only options from year 1 to year 4");// doesn't allow to input year
                     }
                 }
-
                 obj.nextLine();
                 // new student object
                 Student newStudent = new Student(name, lastName, studentID, age, year);
@@ -105,7 +100,6 @@ public class Main {
                     for (Student student : studentList) {
                         if (student.year == studentsFromYear) { // checks if year from studentList matches the entered number in studentsFromYear
                             System.out.println(student); // if the variable studentsFromYear matches with studentList year it prints out the students
-                            break;
                         }
                     }
                 }
@@ -113,7 +107,7 @@ public class Main {
             } else if (option.equals("3")) {
                 System.out.print("Enter student's ID to delete that student:");
                 int studentToDelete = obj.nextInt();// variable for entering a number
-                Iterator<Student> iterator = studentList.iterator(); // delete a specific student
+                Iterator<Student> iterator = studentList.iterator(); // select a specific student to delete
 
                 while (iterator.hasNext()) {
                     Student student = iterator.next();
